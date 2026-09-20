@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>魏婧雯 Jingwen Wei | 南京大学 Nanjing University</title>
+<meta name="description" content="魏婧雯，南京大学机器人与自动化学院准聘助理教授。研究方向：基于时序大模型的装备故障诊断与预后（PHM）、机器人动力能源系统优化管控的具身智能、安全强化学习、电池储能系统。">
+<style>
+  :root{
+    --nju-purple:#6B2D8B;
+    --nju-purple-dark:#4a1d63;
+    --accent:#8a4faf;
+    --ink:#1f2328;
+    --muted:#5a626c;
+    --line:#e6e1ec;
+    --bg:#ffffff;
+    --soft:#faf8fc;
+    --card:#ffffff;
+    --shadow:0 1px 3px rgba(60,30,90,.08),0 4px 14px rgba(60,30,90,.06);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    color:var(--ink);background:var(--soft);line-height:1.75;font-size:16px;
+  }
+  a{color:var(--nju-purple);text-decoration:none}
+  a:hover{color:var(--accent);text-decoration:underline}
+
+  /* ---------- Top nav ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);
+    backdrop-filter:blur(8px);border-bottom:1px solid var(--line);
+  }
+  .nav-inner{max-width:1080px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:56px}
+  .nav-brand{font-weight:700;color:var(--nju-purple);font-size:17px;letter-spacing:.3px}
+  .nav-links{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+  .nav-links a{color:var(--muted);font-size:14px}
+  .nav-links a:hover{color:var(--nju-purple);text-decoration:none}
+
+  /* ---------- Layout ---------- */
+  .container{max-width:1080px;margin:0 auto;padding:0 20px}
+  .hero{display:grid;grid-template-columns:290px 1fr;gap:36px;padding:44px 0 10px}
+  @media(max-width:820px){.hero{grid-template-columns:1fr}}
+
+  .profile{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:28px 22px;text-align:center;height:fit-content;position:sticky;top:76px}
+  .avatar{
+    width:128px;height:128px;border-radius:50%;margin:0 auto 14px;
+    background:linear-gradient(135deg,var(--nju-purple),var(--accent));
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-size:42px;font-weight:700;letter-spacing:1px;
+    border:4px solid #f1eaf7;
+  }
+  .profile h1{font-size:22px;margin-bottom:2px}
+  .profile .zh-name{font-size:16px;color:var(--muted);margin-bottom:8px}
+  .profile .title{font-size:14px;color:var(--nju-purple);font-weight:600;margin-bottom:2px}
+  .profile .affil{font-size:13.5px;color:var(--muted);margin-bottom:14px}
+  .contact-list{text-align:left;font-size:13.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
+  .contact-list div{margin-bottom:7px;word-break:break-all}
+  .contact-list .ico{display:inline-block;width:20px}
+  .link-row{display:flex;justify-content:center;gap:10px;margin-top:14px;flex-wrap:wrap}
+  .link-row a{
+    font-size:12.5px;border:1px solid var(--line);border-radius:14px;padding:3px 12px;
+    color:var(--muted);background:#fff;
+  }
+  .link-row a:hover{border-color:var(--nju-purple);color:var(--nju-purple);text-decoration:none}
+
+  /* ---------- Sections ---------- */
+  section{padding:26px 0 6px}
+  h2{
+    font-size:22px;color:var(--nju-purple);margin-bottom:14px;padding-bottom:8px;
+    border-bottom:2px solid var(--line);letter-spacing:.3px;
+  }
+  h2 .en{font-size:15px;color:var(--muted);font-weight:500;margin-left:8px}
+  .about p{margin-bottom:12px;text-align:justify}
+  .hl{color:var(--nju-purple);font-weight:600}
+
+  .news-item{display:flex;gap:14px;margin-bottom:10px;font-size:15px}
+  .news-date{color:var(--nju-purple);font-weight:600;white-space:nowrap;min-width:86px}
+
+  /* research cards */
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:820px){.cards{grid-template-columns:1fr}}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:20px 22px;box-shadow:var(--shadow);transition:transform .15s ease,box-shadow .15s ease;
+    position:relative;
+  }
+  .card:hover{transform:translateY(-2px);box-shadow:0 4px 8px rgba(60,30,90,.10),0 10px 26px rgba(60,30,90,.10)}
+  .card.featured{border:1.5px solid var(--nju-purple);background:linear-gradient(180deg,#fdfaff,#fff)}
+  .card .tag{
+    position:absolute;top:-11px;right:16px;background:var(--nju-purple);color:#fff;
+    font-size:11.5px;font-weight:600;border-radius:10px;padding:1px 10px;letter-spacing:.5px;
+  }
+  .card h3{font-size:16.5px;color:var(--nju-purple-dark);margin-bottom:4px}
+  .card h3 .sub{display:block;font-size:13px;color:var(--accent);font-weight:600;font-style:italic;margin-top:1px}
+  .card p{font-size:14.5px;color:var(--muted);margin-top:8px}
+  .card .kw{margin-top:10px}
+  .card .kw span{
+    display:inline-block;background:#f3e9f9;color:var(--nju-purple-dark);border-radius:4px;
+    font-size:12px;padding:1px 8px;margin:0 5px 5px 0;font-weight:500;
+  }
+
+  /* publications */
+  .pub{margin-bottom:14px;font-size:14.5px;padding-left:8px;border-left:3px solid transparent}
+  .pub:hover{border-left-color:var(--nju-purple)}
+  .pub .venue{color:var(--nju-purple-dark);font-style:italic}
+  .pub .meta{color:var(--muted);font-size:13px}
+  .pub b{color:var(--ink)}
+  details{margin-top:10px}
+  summary{
+    cursor:pointer;color:var(--nju-purple);font-weight:600;font-size:14.5px;
+    padding:8px 0;user-select:none;
+  }
+  summary:hover{color:var(--accent)}
+
+  /* grants & awards */
+  .grant{margin-bottom:12px;font-size:14.5px}
+  .grant .role{
+    display:inline-block;background:var(--nju-purple);color:#fff;border-radius:4px;
+    font-size:12px;padding:0 8px;margin-right:8px;font-weight:600;
+  }
+  .grant .role.co{background:var(--accent)}
+  .grant .fund{color:var(--muted);font-size:13px}
+  .award-row{display:flex;gap:12px;margin-bottom:8px;font-size:14.5px}
+  .award-year{color:var(--nju-purple);font-weight:600;min-width:52px}
+
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  @media(max-width:820px){.two-col{grid-template-columns:1fr}}
+
+  footer{
+    margin-top:44px;border-top:1px solid var(--line);background:#fff;
+    padding:22px 0;text-align:center;color:var(--muted);font-size:13px;
+  }
+  ::selection{background:#e3d2ef}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <span class="nav-brand">魏婧雯 · Jingwen Wei</span>
+    <div class="nav-links">
+      <a href="#about">简介 About</a>
+      <a href="#news">动态 News</a>
+      <a href="#research">研究方向 Research</a>
+      <a href="#publications">论文 Publications</a>
+      <a href="#grants">项目 Grants</a>
+      <a href="#teaching">教学 Teaching</a>
+      <a href="#awards">获奖 Awards</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- ================= HERO ================= -->
+  <div class="hero" id="about">
+    <aside class="profile">
+      <!-- 如需使用真实照片：将下方 div.avatar 替换为
+           <img src="avatar.jpg" style="width:128px;height:128px;border-radius:50%;object-fit:cover" alt="photo"> -->
+      <div class="avatar">JW</div>
+      <h1>魏婧雯</h1>
+      <div class="zh-name">Jingwen Wei, Ph.D.</div>
+      <div class="title">准聘助理教授（特任研究员）</div>
+      <div class="title" style="font-weight:500;font-size:13px">Tenure-track Assistant Professor</div>
+      <div class="affil">南京大学 机器人与自动化学院<br>School of Robotics and Automation, NJU</div>
+      <div class="contact-list">
+        <div><span class="ico">✉️</span><a href="mailto:jwwei@nju.edu.cn">jwwei@nju.edu.cn</a></div>
+        <div><span class="ico">📍</span>南京市南京大学鼓楼校区协鑫楼 401<br>Room 401, GCL Building, Gulou Campus, Nanjing University</div>
+      </div>
+      <!-- TODO: 部署前请将 # 替换为你的真实主页链接 -->
+      <div class="link-row">
+        <a href="#" target="_blank">Google Scholar</a>
+        <a href="#" target="_blank">ORCID</a>
+        <a href="#" target="_blank">GitHub</a>
+      </div>
+    </aside>
+
+    <div class="about">
+      <h2>关于我 <span class="en">About Me</span></h2>
+      <p>我是南京大学机器人与自动化学院准聘助理教授（特任研究员），博士毕业于中国科学技术大学控制科学与工程专业（导师：陈宗海教授）。我的研究围绕<strong>"大模型 × 机器人 × 能源"</strong>展开，聚焦两条主线：</p>
+      <p>① <span class="hl">基于时序大模型（Time-Series Foundation Models）的装备故障诊断与预后（PHM）</span>：面向电池、电机、机器人关节等关键装备的海量运行时序数据，研究时序大模型的预训练、微调与迁移范式，构建跨场景、跨工况、小样本条件下通用的状态估计、故障诊断与寿命预测（RUL Prediction）能力；</p>
+      <p>② <span class="hl">面向机器人动力能源系统优化管控的具身智能（Embodied AI）</span>：将大语言模型（LLM）的推理规划能力与安全强化学习（Safe RL）相结合，赋予机器人对其"心脏"——动力能源系统——的感知、决策与自我管控能力，实现快充优化、均衡控制与能量调度的端到端智能。</p>
+      <p>我在 <em>IEEE TIE、IEEE TII、IEEE TTE、Applied Energy、Journal of Power Sources</em> 等期刊发表论文 20 余篇，总引用 2700+，H-index 24，连续入选斯坦福-爱思唯尔全球前 2% 顶尖科学家榜单（World's Top 2% Scientists）。主持国家自然科学基金青年项目等多项课题。<strong>欢迎对大模型、PHM、具身智能与电池储能方向感兴趣的硕博同学与我联系！</strong></p>
+    </div>
+  </div>
+
+  <!-- ================= NEWS ================= -->
+  <section id="news">
+    <h2>近期动态 <span class="en">News</span></h2>
+    <div class="news-item"><span class="news-date">2026.09</span><span>获<span class="hl">江苏省科技进步奖三等奖</span>（排二）。</span></div>
+    <div class="news-item"><span class="news-date">2026.09</span><span>主持国家市场监督管理总局重点实验室开放课题：退役锂离子电池安全检测、分级评估与梯次利用关键技术研究。</span></div>
+    <div class="news-item"><span class="news-date">2026.07</span><span>两篇论文被 <em>IEEE TTE</em>（IF 8.5）录用：Multi-agent RL 电动汽车-储能协同调度；Deep Transfer Learning 跨场景电池故障诊断。</span></div>
+    <div class="news-item"><span class="news-date">2026.01</span><span>论文 "Deep ensemble learning for SOH estimation considering random sensor data unavailability" 被 <em>Journal of Energy Storage</em> 录用。</span></div>
+    <div class="news-item"><span class="news-date">2025.12</span><span>获<span class="hl">江苏省自动化学会青年科技奖</span>、南京大学优秀班主任。</span></div>
+    <div class="news-item"><span class="news-date">2024.05</span><span>加入南京大学机器人与自动化学院，任准聘助理教授（特任研究员）。</span></div>
+    <div class="news-item"><span class="news-date">2024.04</span><span>获第四届南京大学青年教师教学竞赛<span class="hl">特等奖</span>；入选江苏省青年科技人才托举工程。</span></div>
+  </section>
+
+  <!-- ================= RESEARCH ================= -->
+  <section id="research">
+    <h2>研究方向 <span class="en">Research Interests</span></h2>
+    <div class="cards">
+      <div class="card featured">
+        <span class="tag">核心方向 KEY</span>
+        <h3>🧠 时序大模型 × 装备故障诊断与预后
+          <span class="sub">Time-Series Foundation Models for PHM</span></h3>
+        <p>面向电池、电机与机器人关键部件的运行时序数据，研究时序大模型（Time-Series LLM / Foundation Model）的预训练-微调-迁移范式，突破跨场景、跨工况、小样本条件下的 State Estimation、Fault Diagnosis 与 RUL Prediction，构建"一个模型诊断多类装备"的通用 PHM 能力。</p>
+        <div class="kw"><span>时序大模型</span><span>故障诊断</span><span>寿命预测 RUL</span><span>迁移学习</span><span>小样本学习</span></div>
+      </div>
+      <div class="card featured">
+        <span class="tag">核心方向 KEY</span>
+        <h3>🤖 机器人动力能源系统管控的具身智能
+          <span class="sub">Embodied AI for Robot Power &amp; Energy Management</span></h3>
+        <p>将 LLM Agent 的推理规划与 Safe Reinforcement Learning 的决策控制相融合，使机器人具备对自身动力能源系统（动力电池/储能单元）的"感知—决策—管控"能力：健康感知快充、主动均衡、多机器人能量协同调度，迈向能源自洽的具身智能体。</p>
+        <div class="kw"><span>具身智能 Embodied AI</span><span>LLM Agent</span><span>Safe RL</span><span>快充优化</span><span>能量调度</span></div>
+      </div>
+      <div class="card">
+        <h3>🛡️ 安全鲁棒强化学习与机器人学习
+          <span class="sub">Safe &amp; Robust RL, Robot Learning</span></h3>
+        <p>面向真实物理系统的安全约束与不确定性，研究安全/鲁棒/离线/迁移强化学习理论与多智能体强化学习（Multi-agent RL），支撑机器人控制与电池快充优化等安全攸关应用。</p>
+        <div class="kw"><span>Safe RL</span><span>Offline RL</span><span>Multi-agent RL</span><span>Transfer RL</span></div>
+      </div>
+      <div class="card">
+        <h3>🔋 电池储能系统建模与智能诊断
+          <span class="sub">Battery Modeling &amp; Intelligent Diagnosis</span></h3>
+        <p>锂离子电池建模、状态估计（SOC/SOH/SOX）、故障诊断与热安全预警；Physics-informed ML 与深度学习在电动汽车、储能电站与清洁能源系统中的应用。</p>
+        <div class="kw"><span>SOX 估计</span><span>热故障诊断</span><span>Physics-informed ML</span><span>Deep Learning</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PUBLICATIONS ================= -->
+  <section id="publications">
+    <h2>学术论文 <span class="en">Publications</span></h2>
+    <p style="font-size:14px;color:var(--muted);margin-bottom:14px">
+      总引用 Citations: 2788 | H-index: 24（Web of Science, Sep 2026）| 高被引 ESI Highly Cited: 1 篇。
+      <b>粗体 Bold</b>: 本人；<u>下划线 Underline</u>: 指导硕士生；#: 通讯/第一作者 Corresponding/First author。
+    </p>
+
+    <h3 style="font-size:16px;margin-bottom:10px;color:var(--nju-purple-dark)">精选论文 Selected Publications</h3>
+
+    <div class="pub">T. Yang, <b>J. Wei#</b>, <u>L. Xie</u>, <u>J. He</u>, C. Chen and G. Dong. Coordinated Scheduling of EV Charging and ESS Using Multiagent Reinforcement Learning With Multihead Attention. <span class="venue">IEEE Transactions on Transportation Electrification</span>, 2026. <span class="meta">IF 8.5</span></div>
+    <div class="pub"><u>X. Li</u>, <b>J. Wei#</b>, <u>L. Xie</u>, C. Chen and G. Dong. Cross-Scenario Multi-Type Fault Diagnosis for Lithium-Ion Batteries via Deep Transfer Learning. <span class="venue">IEEE Transactions on Transportation Electrification</span>, 2026. <span class="meta">IF 8.5</span></div>
+    <div class="pub"><u>L. Xie</u>, <b>J. Wei#</b>, <u>X. Li</u>, C. Chen, H. Chen and G. Dong. Deep Learning-Enabled Fault Diagnosis of Lithium-Ion Batteries Using Real-World Vehicle Data With Gramian Angular Difference Fields. <span class="venue">IEEE Transactions on Industrial Informatics</span>, 21(7): 5622–5632, 2025. <span class="meta">IF 9.8</span></div>
+    <div class="pub"><u>J. He</u>, <u>T. Yang</u>, <u>L. Xie</u>, <u>Y. Yang</u>, C. Chen and <b>Wei, J.#</b> A Data-driven Reinforcement Learning Enabled Battery Fast Charging Optimization Using Real-world Experimental Data. <span class="venue">IEEE Transactions on Industrial Electronics</span>, 72(1): 430–438, 2025. <span class="meta">IF 7.4</span></div>
+    <div class="pub"><b>J. Wei</b>, G. Dong and Z. Chen. Remaining useful life prediction and state of health diagnosis for lithium-ion batteries using particle filter and support vector regression. <span class="venue">IEEE Transactions on Industrial Electronics</span>, 65(7): 5634–5643, 2018. <span class="meta">IF 7.4 · cited 559 · ESI 高被引</span></div>
+    <div class="pub"><b>J. Wei</b>, G. Dong, Z. Chen, and Y. Kang. System state estimation and optimal energy control framework for multicell lithium-ion battery system. <span class="venue">Applied Energy</span>, 187: 37–49, 2017. <span class="meta">IF 11.2</span></div>
+
+    <details>
+      <summary>展开全部论文 Full list（期刊 Journal ×21 + 会议 Conference ×8）</summary>
+      <div style="margin-top:10px">
+        <div class="pub">[J3] <u>Z. Qiu</u>, <u>Q. Tan</u>, C. Chen, and <b>Wei, J.#</b> Deep ensemble learning for state-of-health estimation of lithium-ion batteries considering random sensor data unavailability. <span class="venue">Journal of Energy Storage</span>, 179: 123694, 2026. <span class="meta">IF 10.7</span></div>
+        <div class="pub">[J4] <u>J. Guo</u>, G. Dong, and <b>Wei, J.#</b> Battery state of health estimation based on automatic feature selection and streamlined temporal focus. <span class="venue">Journal of Energy Storage</span>, 141: 119160, 2026. <span class="meta">IF 10.7</span></div>
+        <div class="pub">[J6] <u>J. He</u>, <u>X. Han</u>, <u>X. Yang</u>, C. Chen, <b>J. Wei#</b> and G. Dong. User Preference-Adaptive Battery Fast Charging Strategy Considering Temperature Rising Based on Transfer Reinforcement Learning. <span class="venue">IEEE Trans. Industrial Electronics</span>, 72(10): 10327–10337, 2025.</div>
+        <div class="pub">[J8] <u>Y. Yang</u>, <u>J. He</u>, C. Chen and <b>Wei, J.#</b> Balancing Awareness Fast Charging Control for Lithium-Ion Battery Pack Using Deep Reinforcement Learning. <span class="venue">IEEE Trans. Industrial Electronics</span>, 71(4): 718–727, 2024.</div>
+        <div class="pub">[J9] G. Dong, <u>Y. Feng</u>, <u>Y. Lou</u>, <u>M. Zhang</u> and <b>Wei, J.#</b> Data-Driven Fast Charging Optimization for Lithium-Ion Battery Using Bayesian Optimization with Fast Convergence. <span class="venue">IEEE Trans. Transportation Electrification</span>, 10(2): 4173–4183, 2024.</div>
+        <div class="pub">[J10] <u>Y. Zhou</u>, G. Dong, Q. Tan, X. Han, C. Chen, and <b>J. Wei#</b> State of health estimation for lithium-ion batteries using geometric impedance spectrum features and recurrent gaussian process regression. <span class="venue">Energy</span>, 262: 125514, 2023.</div>
+        <div class="pub">[J11] G. Dong, <u>Y. Feng</u>, <u>Y. Wang</u>, and <b>J. Wei#</b> Probabilistic dischargeable time forecasting of power batteries via statistical characterization of future loading profiles. <span class="venue">Journal of Energy Storage</span>, 59: 106488, 2023.</div>
+        <div class="pub">[J12] <b>J. Wei</b>, C. Chen and G. Dong. Global sensitivity analysis for impedance spectrum identification of lithium-ion batteries using time-domain response. <span class="venue">IEEE Trans. Industrial Electronics</span>, 70(4): 3825–3835, 2023.</div>
+        <div class="pub">[J13] G. Dong, and <b>J. Wei#</b> A physics-based aging model for lithium-ion battery with coupled chemical/mechanical degradation mechanisms. <span class="venue">Electrochimica Acta</span>, 395: 139133, 2021.</div>
+        <div class="pub">[J14] <b>J. Wei</b> and C. Chen. A multi-timescale framework for state monitoring and lifetime prognosis of lithium-ion batteries. <span class="venue">Energy</span>, 229: 120684, 2021.</div>
+        <div class="pub">[J15] G. Dong and <b>Wei, J.#</b> Determination of the load capability for a lithium-ion battery pack using two time-scale filtering. <span class="venue">Journal of Power Sources</span>, 480: 229056, 2020.</div>
+        <div class="pub">[J16] <b>J. Wei</b>, G. Dong and Z. Chen. Lyapunov-based thermal fault diagnosis of cylindrical lithium-ion batteries. <span class="venue">IEEE Trans. Industrial Electronics</span>, 67(6): 4670–4679, 2020.</div>
+        <div class="pub">[J17] C. Zhang, Y. Zhu, G. Dong, &amp; <b>J. Wei#</b> Data-driven lithium-ion battery states estimation using neural networks and particle filtering. <span class="venue">Int. Journal of Energy Research</span>, 43(14): 8230–8241, 2019.</div>
+        <div class="pub">[J18] <b>J. Wei</b>, G. Dong and Z. Chen. Lyapunov-based state of charge diagnosis and health prognosi for lithium-ion batteries. <span class="venue">Journal of Power Sources</span>, 397: 352–360, 2018.</div>
+        <div class="pub">[J20] <b>J. Wei</b>, G. Dong, and Z. Chen. On-board adaptive model for state of charge estimation of lithium-ion batteries based on Kalman filter with proportional integral-based error adjustment. <span class="venue">Journal of Power Sources</span>, 365: 308–319, 2017.</div>
+        <div class="pub">[C1] X. Han and <b>J. Wei#</b> Deep Reinforcement Learning Based Fast Charging of Lithium-Ion Batteries with Different Penalty Coefficients. <span class="venue">ICCSI 2022</span>, Nanjing, pp. 250–255. (EI)</div>
+        <div class="pub">[C2] Y. Yang, <b>J. Wei#</b>, &amp; C. Chen. Health-aware fast-charging control of lithium-ion battery based on reinforcement learning. <span class="venue">IEEE ICNSC 2021</span>, Xiamen. (EI)</div>
+        <div class="pub">[C3] <b>J. Wei</b>, &amp; C. Chen. State of charge and health estimation for lithium-ion batteries using recursive least squares. <span class="venue">ICARM 2020</span>, Shenzhen. (EI)</div>
+        <div class="pub">[C4] <b>J. Wei</b>, G. Dong, &amp; Z. Chen. Model-based fault diagnosis of lithium-ion battery using strong tracking extended Kalman filter. <span class="venue">Energy Procedia</span>, 158: 2500–2505, 2019. (EI)</div>
+        <div class="pub">[C5] X. Yu, <b>J. Wei</b>, G. Dong, Z. Chen, &amp; C. Zhang. State-of-charge estimation approach of lithium-ion batteries using an improved extended Kalman filter. <span class="venue">Energy Procedia</span>, 158: 5097–5102, 2019. (EI)</div>
+        <div class="pub">[C6–C8] 另有 3 篇发表于中国系统仿真技术及其应用学术会议（CCSSTA 2019/2021/2022）。</div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ================= GRANTS ================= -->
+  <section id="grants">
+    <h2>科研项目 <span class="en">Research Grants</span></h2>
+    <div class="grant"><span class="role">主持 PI</span>国家自然科学基金青年项目（NSFC）：基于安全鲁棒强化学习的电池健康感知快充控制策略 <span class="fund">¥30万 · 2023–2025</span></div>
+    <div class="grant"><span class="role">主持 PI</span>国家市场监督管理总局重点实验室开放课题：退役锂离子电池安全检测、分级评估与梯次利用关键技术研究 <span class="fund">¥25万 · 2026–2028</span></div>
+    <div class="grant"><span class="role">主持 PI</span>校企技术攻关：锂离子电池 SOX 算法 <span class="fund">¥100万 · 2026–2028</span></div>
+    <div class="grant"><span class="role">主持 PI</span>校企技术攻关：锂离子电池 SOC 算法 / 镍氢气电池并簇算法 <span class="fund">¥60万 / ¥49万 · 2024–2026</span></div>
+    <div class="grant"><span class="role">主持 PI</span>校企技术咨询：车网互动（V2G）场景下电池检测试验能力体系建设服务 <span class="fund">¥22万 · 2024–2026</span></div>
+    <div class="grant"><span class="role">主持 PI</span>江苏省自然科学基金青年项目：基于多尺度模型的锂电池系统故障检测与诊断研究 <span class="fund">¥20万 · 2020–2023 已结题</span></div>
+    <div class="grant"><span class="role co">共同主持 Co-PI</span>中央高校基本科研业务费原创交叉项目：强化学习在储能系统中的应用 <span class="fund">¥60万 · 2021–2023 已结题</span></div>
+    <div class="grant"><span class="role">主持 PI</span>南京大学技术创新基金：基于系统需求的储能电站状态监测与实时评估技术 <span class="fund">¥7万 · 2023 已结题</span></div>
+  </section>
+
+  <!-- ================= TEACHING & SERVICE ================= -->
+  <div class="two-col">
+    <section id="teaching">
+      <h2>教学 <span class="en">Teaching</span></h2>
+      <ul style="padding-left:20px;font-size:14.5px">
+        <li>传感器原理与技术 Principles of Sensors and Technology（本科必修，4 学分）</li>
+        <li>自动控制原理 Principles of Automatic Control（本科必修，5 学分）</li>
+        <li>智能微网 Smart Microgrids（本硕贯通选修，2 学分）</li>
+      </ul>
+      <p style="font-size:13.5px;color:var(--muted);margin-top:8px">
+        指导研究生 20 名、本科毕设多名；指导大学生创新创业项目 10 项；2022 级自动化班主任。
+      </p>
+    </section>
+
+    <section id="service">
+      <h2>学术服务 <span class="en">Academic Service</span></h2>
+      <ul style="padding-left:20px;font-size:14.5px">
+        <li>客座编辑 Guest Editor：<em>Energies</em> 特刊 "Advanced Management Techniques for Energy Storage Systems"</li>
+        <li>审稿人 Reviewer：<em>Applied Energy, JPS, IEEE TIE/TII/TEC/TTE, Energy</em> 等</li>
+        <li>会议主席 Session Chair：IEEE ICNSC 2020、ICCSI 2022、IEEE IAS I&amp;CPS Asia 2023</li>
+        <li>IEEE Member；中国自动化学会会员暨系统仿真专委会委员；中国仿真学会会员</li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- ================= AWARDS ================= -->
+  <section id="awards">
+    <h2>获奖与荣誉 <span class="en">Honors &amp; Awards</span></h2>
+    <div class="award-row"><span class="award-year">2026</span><span>江苏省科技进步奖三等奖（排二），江苏省人民政府</span></div>
+    <div class="award-row"><span class="award-year">2025</span><span>江苏省自动化学会青年科技奖 Young Scientist Award of JSAA</span></div>
+    <div class="award-row"><span class="award-year">2025</span><span>南京大学优秀班主任</span></div>
+    <div class="award-row"><span class="award-year">2024</span><span>第四届南京大学青年教师教学竞赛<span class="hl">特等奖</span></span></div>
+    <div class="award-row"><span class="award-year">2024</span><span>江苏省青年科技人才托举工程（江苏省科协）</span></div>
+    <div class="award-row"><span class="award-year">2024</span><span>广西省科技进步三等奖（排 10）；江苏省自动化学会科学技术二等奖（排 2）</span></div>
+    <div class="award-row"><span class="award-year">2023</span><span>南京大学育教融合奖；协鑫瑞华师德师风奖</span></div>
+    <div class="award-row"><span class="award-year">2023</span><span>第 12 届中国教育机器人大赛总决赛优秀指导老师（特等奖）</span></div>
+    <div class="award-row"><span class="award-year">2022/23</span><span>全球前 2% 顶尖科学家榜单 World's Top 2% Scientists（Stanford &amp; Elsevier，2021、2022 年度）</span></div>
+    <div class="award-row"><span class="award-year">2020</span><span>江苏省双创博士</span></div>
+    <div class="award-row"><span class="award-year">2019</span><span>中国科学院院长优秀奖；中科大优秀博士论文提名奖</span></div>
+    <div class="award-row"><span class="award-year">2018</span><span>博士生国家奖学金 National Scholarship</span></div>
+    <div class="award-row"><span class="award-year">2017</span><span>华为一等奖学金 Huawei First-Class Scholarship</span></div>
+  </section>
+
+</div>
+
+<footer>
+  © 2026 魏婧雯 Jingwen Wei · 南京大学机器人与自动化学院 School of Robotics and Automation, NJU · 最近更新 Last updated: 2026.09
+</footer>
+
+</body>
+</html>
